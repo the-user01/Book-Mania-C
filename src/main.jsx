@@ -7,13 +7,31 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import './index.css'
+import Home from './components/Home/Home.jsx';
+import ListedBooks from './components/ListedBooks/ListedBooks.jsx';
+import PagestoRead from './components/PagestoRead/PagestoRead.jsx';
+import ErrorMessage from './components/ErrorMessage/ErrorMessage.jsx';
 
 const router = createBrowserRouter([
   {
     path:'/',
     element: <App></App>,
+    errorElement:<ErrorMessage></ErrorMessage> ,
     children: [
-      
+
+      /* Home page path */
+      {
+        path:'/',
+        element: <Home></Home>
+      },
+      {
+        path:'/listedBooks',
+        element: <ListedBooks></ListedBooks>
+      },
+      {
+        path:'/pagesRead',
+        element: <PagestoRead></PagestoRead>
+      },
     ]
   }
 ])
