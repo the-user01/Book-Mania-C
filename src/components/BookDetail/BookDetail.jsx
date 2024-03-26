@@ -1,4 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BookDetail = () => {
     const books = useLoaderData();
@@ -10,11 +12,19 @@ const BookDetail = () => {
 
     const { image, bookName, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = book;
 
+    const handleBookReadBtn = ()=> {
+        toast("Book Successfully added")
+    }
+
+    const handleBookWishlistBtn = ()=> {
+        toast("Book Successfully added to Wishlist")
+    }
+
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto mt-6">
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row ">
-                    <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" className="min-h-screen rounded-lg shadow-2xl" />
+                    <img src={image} className=" md:min-h-screen rounded-lg shadow-2xl" />
                     <div>
                         <h1 className="text-5xl font-bold">{bookName}</h1>
                         <p className="text-base">By: {author}</p>
@@ -42,13 +52,14 @@ const BookDetail = () => {
                         </div>
 
                         <div className="flex gap-4 justify-end mt-4">
-                            <button className="btn btn-primary">Read</button>
-                            <button className="btn btn-primary">Wishlist</button>
+                            <button className="btn btn-primary" onClick={handleBookReadBtn}>Read</button>
+                            <button className="btn btn-primary" onClick={handleBookWishlistBtn}>Wishlist</button>
 
                         </div>
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

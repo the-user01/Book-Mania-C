@@ -11,7 +11,7 @@ const Book = (props) => {
     return (
         <Link to={`/book/${bookId}`}>
             <div className="card card-compact w-96 bg-base-100 shadow-xl cursor-pointer">
-                <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt={bookName} className='p-6 rounded-xl' /></figure>
+                <figure><img src={image} alt={bookName} className='p-6 rounded-xl' /></figure>
                 <div className="card-body">
                     <div className='flex my-4 gap-4 text-center'>
                         {
