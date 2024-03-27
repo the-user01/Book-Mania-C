@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const WishlistBookList = ({ book }) => {
-    const { image, bookName, tags, author, category, rating } = book
+    const { image, bookName } = book
 
     return (
         <div className='my-6'>

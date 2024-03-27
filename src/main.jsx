@@ -1,12 +1,12 @@
 import React from 'react'
+import "./index.css";
+
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import "./index.css";
-import './index.css'
 import Home from './components/Home/Home.jsx';
 import ListedBooks from './components/ListedBooks/ListedBooks.jsx';
 import PagestoRead from './components/PagestoRead/PagestoRead.jsx';
