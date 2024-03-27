@@ -12,31 +12,47 @@ import ListedBooks from './components/ListedBooks/ListedBooks.jsx';
 import PagestoRead from './components/PagestoRead/PagestoRead.jsx';
 import ErrorMessage from './components/ErrorMessage/ErrorMessage.jsx';
 import BookDetail from './components/BookDetail/BookDetail.jsx';
+import ReadBooks from './components/ReadBooks/ReadBooks.jsx';
+import BookWishlist from './components/BookWishlist/BookWishlist.jsx';
 
 const router = createBrowserRouter([
   {
-    path:'/',
+    path: '/',
     element: <App></App>,
-    errorElement:<ErrorMessage></ErrorMessage> ,
+    errorElement: <ErrorMessage></ErrorMessage>,
     children: [
 
       /* Home page path */
       {
-        path:'/',
+        path: '/',
         element: <Home></Home>
       },
       {
-        path:'/listedBooks',
-        element: <ListedBooks></ListedBooks>
+        path: '/listedBooks',
+        element: <ListedBooks></ListedBooks>,
+        children: [
+          {
+            path: '/listedBooks/readBooks',
+            element: <ReadBooks></ReadBooks>,
+            loader: () => fetch('data.json')
+          },
+          {
+            path: '/listedBooks/wishlistBooks',
+            element: <BookWishlist></BookWishlist>,
+            loader: () => fetch('data.json')
+          },
+        ]
+
+        // loader: ()=> fetch('data.json')
       },
       {
-        path:'/pagesRead',
+        path: '/pagesRead',
         element: <PagestoRead></PagestoRead>
       },
       {
-        path:'/book/:bookId',
+        path: '/book/:bookId',
         element: <BookDetail></BookDetail>,
-        loader:()=> fetch('data.json')
+        loader: () => fetch('data.json')
       },
     ]
   }
