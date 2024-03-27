@@ -32,6 +32,9 @@ const BookDetail = () => {
 
     }
 
+
+    /* Book Wish list Button */
+
     const handleBookWishlistBtn = () => {
         const readBooktoredValue = getStoredValue();
         const findReadBookStoreValue = readBooktoredValue.find(data => data === bookIdInt)

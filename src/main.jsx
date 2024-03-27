@@ -1,8 +1,9 @@
 import React from 'react'
 import "./index.css";
-
-import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import ReactDOM from 'react-dom/client'
+
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -27,6 +28,15 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>
       },
+
+      /* Book Details path */
+      {
+        path: '/book/:bookId',
+        element: <BookDetail></BookDetail>,
+        loader: () => fetch('data.json')
+      },
+
+      /* Listed Books path */
       {
         path: '/listedBooks',
         element: <ListedBooks></ListedBooks>,
@@ -42,17 +52,13 @@ const router = createBrowserRouter([
             loader: () => fetch('data.json')
           },
         ]
-
-        // loader: ()=> fetch('data.json')
       },
+
+      /* Pages to read path */
       {
         path: '/pagesRead',
-        element: <PagestoRead></PagestoRead>
-      },
-      {
-        path: '/book/:bookId',
-        element: <BookDetail></BookDetail>,
-        loader: () => fetch('data.json')
+        element: <PagestoRead></PagestoRead>,
+        loader: ()=> fetch('data.json')
       },
     ]
   }
