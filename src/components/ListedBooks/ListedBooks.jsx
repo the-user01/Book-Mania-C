@@ -32,7 +32,7 @@ const ListedBooks = () => {
             */}
 
             <div className="mt-6">
-                <div role="tablist" className="tabs tabs-lifted">
+                <div role="tablist" className="tabs tabs-lifted font-bold">
                     <div role="tab" className={selectTabs === 1 ? 'tab tab-active' : 'tab' } onClick={()=> handleTabs(1)}><Link to='/listedBooks/readBooks'>Read Books</Link></div>
 
                     <div role="tab" className={selectTabs === 2 ? 'tab tab-active' : 'tab' } onClick={()=> handleTabs(2)}><Link to='/listedBooks/wishlistBooks'>Wish List</Link></div>
