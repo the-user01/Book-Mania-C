@@ -1,8 +1,10 @@
-# React + Vite
+#Book-Mania-C
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##Live Link:  https://book-mania-c.netlify.app/
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-User can see the book list
+-Can see the book details
+-User can add books to Read and Wish List
+-User can sort books according to book rating, number of pages and publish year
+-User can see a grap for how many pages they read
